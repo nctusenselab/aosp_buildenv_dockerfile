@@ -52,5 +52,7 @@ ENV USE_CCACHE 1
 
 USER buildbot
 ENV HOME /home/buildbot
+RUN mkdir /home/buildbot/android
+RUN chown -R buildbot:buildbot /home/buildbot/android
 WORKDIR /home/buildbot/android
 VOLUME /home/buildbot/android
