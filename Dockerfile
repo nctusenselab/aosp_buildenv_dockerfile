@@ -46,6 +46,10 @@ RUN apt-get install oracle-java6-set-default
 RUN apt-get install -y gettext python-libxml2 yasm bc
 RUN apt-get install -y squashfs-tools genisoimage dosfstools mtools
 
+# android-x86-kitkat need python library mako
+RUN apt-get install -y python-pip
+RUN pip install mako
+
 RUN useradd --create-home buildbot
 RUN echo "export USE_CCACHE=1" >> /etc/profile.d/android
 ENV USE_CCACHE 1
